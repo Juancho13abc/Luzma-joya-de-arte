@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Luzma</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-page {
+    padding: 12rem 4rem 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+  
+  .contact-info-col h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300;
+    color: var(--graphite);
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.2s forwards;
+  }
+  .contact-info-col h1 em { font-style: italic; color: var(--rose-gold); }
+  .contact-desc {
+    font-size: 1rem;
+    color: var(--graphite-mid);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.4s forwards;
+  }
+  
+  .info-group {
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.6s forwards;
+  }
+  .info-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+    margin-bottom: 0.5rem;
+  }
+  .info-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--graphite);
+  }
+  
+  .contact-form-col {
+    background: var(--white);
+    padding: 4rem;
+    border: 0.5px solid rgba(196, 149, 106, 0.2);
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.8s forwards;
+  }
+  .form-group {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .form-control {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(196, 149, 106, 0.3);
+    padding: 0.5rem 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    color: var(--graphite);
+    transition: border-color 0.3s;
+    outline: none;
+  }
+  .form-control:focus {
+    border-bottom-color: var(--rose-gold);
+  }
+  .form-label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-size: 0.85rem;
+    color: var(--graphite-light);
+    pointer-events: none;
+    transition: 0.3s ease all;
+  }
+  .form-control:focus ~ .form-label,
+  .form-control:not(:placeholder-shown) ~ .form-label {
+    top: -15px;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+  }
+  
+  textarea.form-control {
+    resize: none;
+    height: 100px;
+    padding-top: 1rem;
+  }
+  
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0.75rem;
+    background: var(--graphite);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .submit-btn:hover {
+    background: var(--rose-gold-deep);
+  }
+
+  @media (max-width: 900px) {
+    .contact-page { grid-template-columns: 1fr; padding: 8rem 2rem 4rem; gap: 4rem; }
+    .contact-form-col { padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+
+<!-- Navigation -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">Luzma</a>
+  <ul class="nav-links">
+    <li><a href="colecciones.html">Colecciones</a></li>
+    <li><a href="proceso.html">Proceso</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="colecciones.html">Colecciones</a>
+  <a href="proceso.html">Proceso</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+
+<div class="contact-page">
+  <div class="contact-info-col">
+    <div class="section-label" style="margin-bottom:1.5rem; opacity:0; animation: fadeUp 1s ease forwards;">Encuéntranos</div>
+    <h1>¿Lista para tu<br>pieza <em>única</em>?</h1>
+    <p class="contact-desc">
+      Cada pieza de Luzma se crea con tiempo, amor y técnica. Ya sea que busques una pieza de nuestra colección actual o desees encargar un diseño completamente personalizado, estamos aquí para escucharte.
+    </p>
+    
+    <div class="info-group">
+      <div class="info-label">WhatsApp</div>
+      <div class="info-value"><a href="https://wa.me/573000000000" target="_blank" style="text-decoration:none; color:inherit;">+57 300 000 0000</a></div>
+    </div>
+    
+    <div class="info-group">
+      <div class="info-label">Email</div>
+      <div class="info-value">hola@luzmajoyas.com</div>
+    </div>
+    
+    <div class="info-group">
+      <div class="info-label">Ubicación</div>
+      <div class="info-value">Huila, Colombia</div>
+    </div>
+  </div>
+  
+  <div class="contact-form-col">
+    <form onsubmit="event.preventDefault(); alert('Mensaje enviado (Simulación)');">
+      <div class="form-group">
+        <input type="text" class="form-control" id="name" placeholder=" " required>
+        <label for="name" class="form-label">Nombre Completo</label>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder=" " required>
+        <label for="email" class="form-label">Correo Electrónico</label>
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="subject" style="color:var(--graphite-mid); appearance: none;" required>
+          <option value="" disabled selected>Asunto de tu mensaje</option>
+          <option value="joyas">Colección Joyas de Autor</option>
+          <option value="tela">Colección Arte en Tela</option>
+          <option value="bisuteria">Colección Bisutería</option>
+          <option value="personalizado">Pedido Personalizado</option>
+          <option value="otro">Otro / Consulta General</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="message" placeholder=" " required></textarea>
+        <label for="message" class="form-label">Tu Mensaje</label>
+      </div>
+      <button type="submit" class="submit-btn">Enviar Mensaje</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-professional">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">Luzma</div>
+      <div class="footer-tagline">Hecho a mano con amor · Huila, Colombia</div>
+      <p class="footer-desc">Transformamos materiales nobles en piezas únicas de joyería y arte wearable. Cada diseño cuenta una historia viva de tradición y pasión artesanal.</p>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-column">
+        <h4>Explorar</h4>
+        <a href="index.html">Inicio</a>
+        <a href="colecciones.html">Colecciones</a>
+        <a href="proceso.html">Proceso</a>
+      </div>
+      <div class="footer-column">
+        <h4>Luzma</h4>
+        <a href="nosotros.html">Nuestra Historia</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="#">Términos y Condiciones</a>
+      </div>
+      <div class="footer-column">
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-made">© 2025 Luzma — Joyas de Arte. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
