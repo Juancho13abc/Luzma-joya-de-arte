@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proceso | Luzma</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .process-header {
+    padding: 12rem 4rem 6rem;
+    text-align: center;
+    background: var(--cream);
+    color: var(--graphite);
+  }
+  .process-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 300;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.2s forwards;
+  }
+  .process-title em { font-style: italic; color: var(--rose-gold-light); }
+  
+  .extra-process-content {
+    background: var(--cream);
+    padding: 8rem 4rem;
+  }
+  .timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 50%;
+    width: 1px;
+    background: var(--rose-gold);
+    transform: translateX(-50%);
+  }
+  .timeline-item {
+    margin-bottom: 4rem;
+    position: relative;
+    width: 50%;
+    padding-right: 3rem;
+  }
+  .timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding-right: 0;
+    padding-left: 3rem;
+  }
+  .timeline-dot {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--rose-gold);
+    border: 3px solid var(--cream);
+  }
+  .timeline-item:nth-child(even) .timeline-dot {
+    right: auto;
+    left: -6px;
+  }
+  .timeline-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--graphite);
+    margin-bottom: 0.5rem;
+  }
+  .timeline-content h3 em { font-style: italic; color: var(--rose-gold); }
+  .timeline-content p {
+    font-size: 0.9rem;
+    color: var(--graphite-mid);
+    line-height: 1.6;
+  }
+  .timeline-image {
+    width: 100%;
+    height: 200px;
+    background: var(--cream-dark);
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid rgba(196, 149, 106, 0.2);
+  }
+  .timeline-image-placeholder {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: rgba(196, 149, 106, 0.4);
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 900px) {
+    .timeline::before { left: 0; }
+    .timeline-item { width: 100%; padding-left: 2rem !important; padding-right: 0; }
+    .timeline-item:nth-child(even) { margin-left: 0; }
+    .timeline-dot { left: -6px !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+
+<!-- Navigation -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">Luzma</a>
+  <ul class="nav-links">
+    <li><a href="colecciones.html">Colecciones</a></li>
+    <li><a href="proceso.html">Proceso</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="colecciones.html">Colecciones</a>
+  <a href="proceso.html">Proceso</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+
+<div class="process-header">
+  <div class="section-label" style="justify-content:center; margin-bottom: 1rem; opacity:0; animation: fadeUp 1s ease forwards;">El Proceso</div>
+  <h1 class="process-title">El arte de<br><em>crear</em></h1>
+</div>
+
+<!-- STORY / PARALLAX -->
+<section class="story" id="proceso" style="padding-top: 4rem;">
+  <div class="story-bg"></div>
+  <div class="story-inner">
+    <div class="story-text reveal">
+      <h2 class="story-title">Cada pieza,<br>una historia<br><em>viva</em></h2>
+      <blockquote class="story-quote">
+        "Transformamos materiales nobles en piezas únicas que hablan por sí solas."
+      </blockquote>
+      <p class="story-body">
+        Desde la selección de cada material hasta el último detalle acabado, nuestro proceso es completamente artesanal. Trabajamos con pasión, tiempo y técnica para que cada pieza de Luzma sea irrepetible — un objeto de arte que llevas contigo.
+      </p>
+    </div>
+    <div class="story-visual" id="parallax-visual">
+      <div class="story-panel">
+        <span class="story-panel-placeholder">✦ Imagen Taller</span>
+      </div>
+      <div class="story-panel">
+        <span class="story-panel-placeholder">◇ Herramientas</span>
+      </div>
+      <div class="story-panel">
+        <span class="story-panel-placeholder">○ Detalle</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORIZONTAL SCROLL: CAMISAS -->
+<section class="horizontal-section">
+  <div class="horizontal-label reveal">
+    <div class="section-label" style="justify-content:center; margin-bottom:0.5rem;">Arte en Tela</div>
+    <h2 class="horizontal-title">Camisas <em>Maquilladas</em></h2>
+    <p class="horizontal-sub">Desliza para explorar el proceso artístico</p>
+  </div>
+  <div style="overflow: hidden; padding: 0 4rem;">
+    <div class="horizontal-track" id="h-track">
+      <div class="h-card">
+        <div class="h-card-visual">
+          <div class="h-card-visual-inner"><span class="h-card-num">01</span></div>
+          <div class="glint"></div>
+        </div>
+        <div class="h-card-info">
+          <div class="h-card-step">Paso 01</div>
+          <div class="h-card-name">La tela como lienzo</div>
+          <p class="h-card-desc">Seleccionamos prendas de calidad que se convierten en el punto de partida de nuestra intervención artística.</p>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-visual" style="background:#E8DDD0;">
+          <div class="h-card-visual-inner"><span class="h-card-num">02</span></div>
+          <div class="glint"></div>
+        </div>
+        <div class="h-card-info">
+          <div class="h-card-step">Paso 02</div>
+          <div class="h-card-name">La paleta de color</div>
+          <p class="h-card-desc">Pigmentos especiales seleccionados a mano para cada diseño, pensados para durar y mantener su intensidad.</p>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-visual" style="background:#EDE5D8;">
+          <div class="h-card-visual-inner"><span class="h-card-num">03</span></div>
+          <div class="glint"></div>
+        </div>
+        <div class="h-card-info">
+          <div class="h-card-step">Paso 03</div>
+          <div class="h-card-name">La pincelada única</div>
+          <p class="h-card-desc">Cada trazo es irrepetible. Maquillamos cada prenda con alma, convirtiendo la moda en expresión artística pura.</p>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-visual" style="background:#E0D5C5;">
+          <div class="h-card-visual-inner"><span class="h-card-num">04</span></div>
+          <div class="glint"></div>
+        </div>
+        <div class="h-card-info">
+          <div class="h-card-step">Paso 04</div>
+          <div class="h-card-name">La obra terminada</div>
+          <p class="h-card-desc">Una prenda que ya no es solo ropa: es una pieza de arte wearable, exclusiva y firmada por Luzma.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUEVO CONTENIDO: TIMELINE -->
+<section class="extra-process-content">
+  <div class="section-label" style="justify-content:center; margin-bottom:4rem;">Fabricación de Joyas</div>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>1. <em>Inspiración</em> y Boceto</h3>
+        <p>Todo comienza con una idea, un sentimiento o una historia. Cada diseño es plasmado en papel antes de cobrar vida en el metal.</p>
+        <div class="timeline-image">
+          <span class="timeline-image-placeholder">Imagen Bocetos</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>2. Selección de <em>Materiales</em></h3>
+        <p>Elegimos metales nobles y piedras que resuenen con la energía de la pieza que estamos por crear.</p>
+        <div class="timeline-image">
+          <span class="timeline-image-placeholder">Imagen Materiales</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>3. El <em>Forjado</em></h3>
+        <p>A través del calor y los golpes precisos, el material comienza a tomar forma, adaptándose a nuestra visión artística.</p>
+        <div class="timeline-image">
+          <span class="timeline-image-placeholder">Imagen Forjado</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>4. Pulido y <em>Detalles</em></h3>
+        <p>El acabado es la firma del autor. Un proceso meticuloso de pulido resalta el brillo y la textura única de cada joya.</p>
+        <div class="timeline-image">
+          <span class="timeline-image-placeholder">Imagen Acabados</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-professional">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">Luzma</div>
+      <div class="footer-tagline">Hecho a mano con amor · Huila, Colombia</div>
+      <p class="footer-desc">Transformamos materiales nobles en piezas únicas de joyería y arte wearable. Cada diseño cuenta una historia viva de tradición y pasión artesanal.</p>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-column">
+        <h4>Explorar</h4>
+        <a href="index.html">Inicio</a>
+        <a href="colecciones.html">Colecciones</a>
+        <a href="proceso.html">Proceso</a>
+      </div>
+      <div class="footer-column">
+        <h4>Luzma</h4>
+        <a href="nosotros.html">Nuestra Historia</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="#">Términos y Condiciones</a>
+      </div>
+      <div class="footer-column">
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.274-.101-.473-.15-.671.15-.197.295-.771.966-.944 1.162-.175.195-.349.21-.646.06-.297-.15-1.265-.462-2.406-1.485-.888-.798-1.484-1.781-1.658-2.081-.173-.301-.018-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.292-.501.1-.203.05-.38-.025-.524-.075-.15-.671-1.62-.922-2.206-.24-.579-.481-.501-.66-.51l-.564-.01c-.198-.001-.522.074-.793.375-.275.301-1.045 1.02-1.045 2.49 0 1.476 1.069 2.895 1.219 3.091.15.195 2.105 3.195 5.1 4.485.714.305 1.272.487 1.704.629.714.227 1.365.195 1.881.121.574-.082 1.767-.721 2.016-1.426.248-.705.248-1.305.173-1.426-.074-.121-.274-.195-.576-.345z"></path>
+              <path d="M20.52 3.449A11.964 11.964 0 0012 .002 12.001 12.001 0 001.704 17.81L.002 24l6.34-1.658A11.986 11.986 0 0012 23.996h.005c6.618 0 12-5.385 12-12.004a11.95 11.95 0 00-3.485-8.543zM12 21.996c-1.921 0-3.816-.516-5.46-1.493l-.391-.233-4.053 1.06.108-3.951-.254-.4A9.972 9.972 0 012.005 12c0-5.514 4.486-10 10.005-10 5.513 0 10 4.486 10 10s-4.487 10-10.01 10z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-made">© 2025 Luzma — Joyas de Arte. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

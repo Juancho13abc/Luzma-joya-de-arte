@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosotros | Luzma</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .about-header {
+    padding: 12rem 4rem 6rem;
+    text-align: center;
+  }
+  .about-title-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 300;
+    color: var(--graphite);
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.2s forwards;
+  }
+  .about-title-main em { font-style: italic; color: var(--rose-gold); }
+
+  .philosophy {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 4rem;
+    background: var(--white);
+    border: 0.5px solid rgba(196, 149, 106, 0.2);
+    text-align: center;
+    position: relative;
+  }
+  .philosophy::before {
+    content: '';
+    position: absolute;
+    top: -20px; left: -20px; right: -20px; bottom: -20px;
+    border: 0.5px solid rgba(196, 149, 106, 0.1);
+    z-index: -1;
+  }
+  .philosophy h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--graphite);
+    margin-bottom: 2rem;
+  }
+  .philosophy h2 em { font-style: italic; color: var(--rose-gold); }
+  .philosophy p {
+    font-size: 1rem;
+    color: var(--graphite-mid);
+    line-height: 1.8;
+  }
+
+  .founder {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 8rem auto;
+    padding: 0 4rem;
+  }
+  .founder-image {
+    flex: 1;
+    height: 600px;
+    background: var(--cream-dark);
+    position: relative;
+    border: 0.5px solid rgba(196, 149, 106, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .founder-image-inner {
+    position: absolute;
+    inset: 15px;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .founder-placeholder {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: rgba(196, 149, 106, 0.4);
+    font-size: 2rem;
+  }
+  .founder-text {
+    flex: 1;
+  }
+  .founder-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--graphite);
+    margin-bottom: 1rem;
+  }
+  .founder-text h3 em { font-style: italic; color: var(--rose-gold); }
+  .founder-text p {
+    font-size: 0.95rem;
+    color: var(--graphite-mid);
+    line-height: 1.9;
+    margin-bottom: 2rem;
+  }
+  
+  @media (max-width: 900px) {
+    .philosophy { padding: 3rem 2rem; margin: 4rem 2rem; }
+    .founder { flex-direction: column; padding: 0 2rem; gap: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+
+<!-- Navigation -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">Luzma</a>
+  <ul class="nav-links">
+    <li><a href="colecciones.html">Colecciones</a></li>
+    <li><a href="proceso.html">Proceso</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="colecciones.html">Colecciones</a>
+  <a href="proceso.html">Proceso</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+
+<div class="about-header">
+  <div class="section-label" style="justify-content:center; margin-bottom: 1rem; opacity:0; animation: fadeUp 1s ease forwards;">Nuestra Esencia</div>
+  <h1 class="about-title-main">Arte que nace<br>de las <em>manos</em></h1>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros" style="margin-top: 0;">
+  <div class="about-text reveal">
+    <p class="about-body">
+      En Luzma, creemos que cada accesorio cuenta una historia. Nos apasiona transformar materiales nobles en piezas únicas de joyería y bisutería, además de intervenir artísticamente prendas de vestir para convertirlas en piezas de arte exclusivas.
+    </p>
+    <div class="stats-row">
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Hecho a mano</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Líneas de arte</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">Piezas únicas</span>
+      </div>
+    </div>
+  </div>
+  <div class="about-visual reveal reveal-delay-2">
+    <div class="about-frame">
+      <div class="about-corner tl"></div>
+      <div class="about-corner tr"></div>
+      <div class="about-corner bl"></div>
+      <div class="about-corner br"></div>
+      <div class="about-frame-inner">
+        <span class="about-placeholder">✦</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUEVO CONTENIDO: FILOSOFÍA -->
+<section class="philosophy reveal">
+  <h2>Nuestra <em>Filosofía</em></h2>
+  <p>Creemos en el ritmo lento de la creación. En un mundo acelerado, nuestras piezas son un refugio de dedicación y paciencia. Cada golpe de martillo, cada pincelada en la tela, es un tributo a la tradición artesanal colombiana y una celebración de la autenticidad. No hacemos productos en masa; creamos piezas con alma, pensadas para ser heredadas y valoradas a través del tiempo.</p>
+</section>
+
+<!-- NUEVO CONTENIDO: FUNDADORA -->
+<section class="founder reveal">
+  <div class="founder-image">
+    <div class="founder-image-inner">
+      <span class="founder-placeholder">Retrato Fundadora</span>
+    </div>
+  </div>
+  <div class="founder-text">
+    <div class="section-label">La Artista</div>
+    <h3>Detrás de <em>Luzma</em></h3>
+    <p>Con raíces profundas en el Huila, Colombia, nuestra fundadora y artista principal encuentra inspiración en los colores de la tierra, la fluidez de la naturaleza y la riqueza cultural de su entorno. Su visión es entrelazar técnicas ancestrales con diseños contemporáneos, permitiendo que cada mujer que lleve una pieza Luzma se sienta conectada con una obra de arte viva y atemporal.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-professional">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">Luzma</div>
+      <div class="footer-tagline">Hecho a mano con amor · Huila, Colombia</div>
+      <p class="footer-desc">Transformamos materiales nobles en piezas únicas de joyería y arte wearable. Cada diseño cuenta una historia viva de tradición y pasión artesanal.</p>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-column">
+        <h4>Explorar</h4>
+        <a href="index.html">Inicio</a>
+        <a href="colecciones.html">Colecciones</a>
+        <a href="proceso.html">Proceso</a>
+      </div>
+      <div class="footer-column">
+        <h4>Luzma</h4>
+        <a href="nosotros.html">Nuestra Historia</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="#">Términos y Condiciones</a>
+      </div>
+      <div class="footer-column">
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.274-.101-.473-.15-.671.15-.197.295-.771.966-.944 1.162-.175.195-.349.21-.646.06-.297-.15-1.265-.462-2.406-1.485-.888-.798-1.484-1.781-1.658-2.081-.173-.301-.018-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.292-.501.1-.203.05-.38-.025-.524-.075-.15-.671-1.62-.922-2.206-.24-.579-.481-.501-.66-.51l-.564-.01c-.198-.001-.522.074-.793.375-.275.301-1.045 1.02-1.045 2.49 0 1.476 1.069 2.895 1.219 3.091.15.195 2.105 3.195 5.1 4.485.714.305 1.272.487 1.704.629.714.227 1.365.195 1.881.121.574-.082 1.767-.721 2.016-1.426.248-.705.248-1.305.173-1.426-.074-.121-.274-.195-.576-.345z"></path>
+              <path d="M20.52 3.449A11.964 11.964 0 0012 .002 12.001 12.001 0 001.704 17.81L.002 24l6.34-1.658A11.986 11.986 0 0012 23.996h.005c6.618 0 12-5.385 12-12.004a11.95 11.95 0 00-3.485-8.543zM12 21.996c-1.921 0-3.816-.516-5.46-1.493l-.391-.233-4.053 1.06.108-3.951-.254-.4A9.972 9.972 0 012.005 12c0-5.514 4.486-10 10.005-10 5.513 0 10 4.486 10 10s-4.487 10-10.01 10z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-made">© 2025 Luzma — Joyas de Arte. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
